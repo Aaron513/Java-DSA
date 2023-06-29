@@ -13,7 +13,7 @@ public class singlyLinkList {
         
     }
 
-    public static void display() {
+    public static void display(ListNode head) {
         ListNode current = head;
         while(current != null){
             System.out.print(current.data + " --> ");
@@ -112,40 +112,76 @@ public class singlyLinkList {
     //     }             
     // }
 
+    // public static Boolean elementInList(int nodeVal) {
+    //     ListNode current = head;
+    //     while(current != null){
+    //         if(current.data == nodeVal){
+    //             return true;
+    //         }
+    //         current = current.next;
+    //     }
+    //     return false;
+    // }
+
+    public static ListNode reverseList(ListNode head) {
+        if(head == null){
+            return head;
+        }
+        ListNode current = head;
+        ListNode previous = null;
+        ListNode next = null;
+        while(current != null){
+            next = current.next;
+            current.next = previous;
+            previous = current;
+            current = next;
+        }
+        return previous;
+    }
+
+
+
     public static void main(String[] args) {
         head = new ListNode(10);
         ListNode second = new ListNode(1);
         
         head.next = second;
 
-        // display();
+        // display(head);
         
         // int count = countList();
         // System.out.println(count);
         
         // insertFirst(5);
-        // display();
+        // display(head);
 
         // insertEnd(12);
-        // display();
+        // display(head);
 
         insertAny(14, 3);
         insertAny(19, 2);
         insertAny(5, 1);
         insertAny(25, 6);
-        display();
+        display(head);
 
         // System.out.println(deleteFirst().data);
         // deleteFirst();
-        // display();
+        // display(head);
 
         // System.out.println(deleteLast().data);
         // deleteLast();
-        // display();
+        // display(head);
 
         // System.out.println(deleteAny(4).data); 
         // deleteAny(3);
-        // display();
+        // display(head);
+
+        // boolean z = elementInList(1);
+        // System.out.println(z);
+        // System.out.println(elementInList(4));
+
+        ListNode reverseListHead = reverseList(head);
+        display(reverseListHead);
 
     }
 
