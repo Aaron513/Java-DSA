@@ -123,21 +123,21 @@ public class singlyLinkList {
     //     return false;
     // }
 
-    public static ListNode reverseList(ListNode head) {
-        if(head == null){
-            return head;
-        }
-        ListNode current = head;
-        ListNode previous = null;
-        ListNode next = null;
-        while(current != null){
-            next = current.next;
-            current.next = previous;
-            previous = current;
-            current = next;
-        }
-        return previous;
-    }
+    // public static ListNode reverseList(ListNode head) {
+    //     if(head == null){
+    //         return head;
+    //     }
+    //     ListNode current = head;
+    //     ListNode previous = null;
+    //     ListNode next = null;
+    //     while(current != null){
+    //         next = current.next;
+    //         current.next = previous;
+    //         previous = current;
+    //         current = next;
+    //     }
+    //     return previous;
+    // }
 
 
 
@@ -180,8 +180,8 @@ public class singlyLinkList {
         // System.out.println(z);
         // System.out.println(elementInList(4));
 
-        ListNode reverseListHead = reverseList(head);
-        display(reverseListHead);
+        // ListNode reverseListHead = reverseList(head);
+        // display(reverseListHead);
 
     }
 
