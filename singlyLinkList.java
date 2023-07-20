@@ -38,36 +38,36 @@ public class singlyLinkList {
     //     head = newNode;
     // }
 
-    // public static void insertEnd(int nodeVal) {
-    //     ListNode newNode = new ListNode(nodeVal);
-    //     if(head == null){
-    //         head = newNode;
-    //         return;
-    //     }
-    //     ListNode current = head;
-    //     while(null != current.next){
-    //         current = current.next;
-    //     }
-    //     current.next = newNode;
-    // }
-
-    public static void insertAny(int nodeVal, int pos) {
+    public static void insertEnd(int nodeVal) {
         ListNode newNode = new ListNode(nodeVal);
-        if(pos == 1){
-            newNode.next = head;
+        if(head == null){
             head = newNode;
-        }else{
-            ListNode previous = head;
-            int count = 1;
-            while(count < pos -1){
-                previous = previous.next;
-                count++;
-            }
-            ListNode current = previous.next;
-            newNode.next = current;
-            previous.next = newNode;
+            return;
         }
+        ListNode current = head;
+        while(null != current.next){
+            current = current.next;
+        }
+        current.next = newNode;
     }
+
+    // public static void insertAny(int nodeVal, int pos) {
+    //     ListNode newNode = new ListNode(nodeVal);
+    //     if(pos == 1){
+    //         newNode.next = head;
+    //         head = newNode;
+    //     }else{
+    //         ListNode previous = head;
+    //         int count = 1;
+    //         while(count < pos -1){
+    //             previous = previous.next;
+    //             count++;
+    //         }
+    //         ListNode current = previous.next;
+    //         newNode.next = current;
+    //         previous.next = newNode;
+    //     }
+    // }
 
     // public static ListNode deleteFirst() {
     //     if(head == null){
@@ -139,13 +139,125 @@ public class singlyLinkList {
     //     return previous;
     // }
 
+    // public static ListNode middleListNode(ListNode head) {
+    //     if(head == null){
+    //         return null;
+    //     }
+    //     ListNode slowptr = head;
+    //     ListNode fastptr = head;
+    //     while(fastptr != null && fastptr.next != null){
+    //         slowptr = slowptr.next;
+    //         fastptr = fastptr.next.next;
+    //     }
+    //     return slowptr;
+    // }
+
+    // public static ListNode nthListNodeFromEnd(ListNode head, int n) {
+    //     if(head == null){
+    //         return null;
+    //     }
+    //     if(n<=0){
+    //         throw new IllegalArgumentException("Invalid Value: n = " + n);
+    //     }
+    // 
+    //     ListNode mainPtr = head;
+    //     ListNode refPtr = head;
+    //     int count = 0;
+    //     while(count < n){
+    //         refPtr = refPtr.next;
+    //         count++;
+    //     }
+    //     while(refPtr != null){
+    //         refPtr = refPtr.next;
+    //         mainPtr = mainPtr.next;
+    //     }
+    //     return mainPtr;
+    // }
+
+    // public static void removeDupliFromSorted(ListNode head) {
+    //     if(head == null){
+    //         return;
+    //     }
+    //     ListNode current = head;
+    //     while(current != null && current.next != null){
+    //         if(current.data == current.next.data){
+    //             current.next = current.next.next;
+    //         }else{
+    //             current = current.next;
+    //         }
+    //     }        
+    // }
+
+    // public static ListNode insertInSortedList(ListNode head, int nodeVal) {
+    //     ListNode newNode = new ListNode(nodeVal);
+    //     if(head == null){
+    //         return newNode;
+    //     }
+        
+    //     ListNode current = head;
+    //     ListNode temp = null;
+    //     while(current != null && current.data < newNode.data){
+    //         temp = current;
+    //         current = current.next;
+    //     }
+    //     newNode.next = current;
+    //     temp.next = newNode;
+    //     return head;        
+    // }
+
+    // public static void deleteKey(int nodeVal){
+    //     ListNode current = head;
+    //     ListNode temp = null;
+
+    //     if(current!= null && current.data==nodeVal){
+    //         head = current.next;
+    //         return;
+    //     }
+    //     while(current != null && current.data != nodeVal){
+    //         temp = current;
+    //         current = current.next;
+    //     }
+    //     if(current == null) return;
+    //     temp.next = current.next;
+    // }
+
+    // public static Boolean isLoop(){
+    //     ListNode fastPtr = head;
+    //     ListNode slowPtr = head;
+    //     while(fastPtr != null && fastPtr.next != null){
+    //         fastPtr = fastPtr.next.next;
+    //         slowPtr = slowPtr.next;
+    //         if(fastPtr == slowPtr){
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    // public static void createLoopInList(){
+    //     ListNode second = new ListNode(6);
+    //     ListNode t = new ListNode(3);
+    //     ListNode fo = new ListNode(15);
+    //     ListNode fi = new ListNode(56);
+    //     ListNode si = new ListNode(21);
+    //     ListNode se = new ListNode(9);
+
+    //     head = second;
+    //     second.next = t;
+    //     t.next = fo;
+    //     fo.next = fi;
+    //     fi.next = si;
+    //     si.next = se;
+    //     se.next = fo;
+    // }
+
 
 
     public static void main(String[] args) {
-        head = new ListNode(10);
-        ListNode second = new ListNode(1);
+        // head = new ListNode(1);
+        // ListNode second = new ListNode(5);
         
-        head.next = second;
+        // head.next = second;
 
         // display(head);
         
@@ -155,14 +267,18 @@ public class singlyLinkList {
         // insertFirst(5);
         // display(head);
 
-        // insertEnd(12);
+        // insertEnd(11);
+        // insertEnd(13);
+        // insertEnd(23);
+        // insertEnd(31);
+        // insertEnd(39);
         // display(head);
 
-        insertAny(14, 3);
-        insertAny(19, 2);
-        insertAny(5, 1);
-        insertAny(25, 6);
-        display(head);
+        // insertAny(14, 3);
+        // insertAny(19, 2);
+        // insertAny(5, 1);
+        // insertAny(25, 6);
+        // display(head);
 
         // System.out.println(deleteFirst().data);
         // deleteFirst();
@@ -183,6 +299,25 @@ public class singlyLinkList {
         // ListNode reverseListHead = reverseList(head);
         // display(reverseListHead);
 
+        // ListNode z = middleListNode(head);
+        // System.out.println(z.data);
+
+        // ListNode z = nthListNodeFromEnd(head, 2);
+        // System.out.println(z.data);
+
+        // removeDupliFromSorted(head);
+        // display(head);
+
+        // insertInSortedList(head, 15);
+        // display(head);
+
+        // deleteKey(15);
+        // display(head);
+
+        // createLoopInList();
+        // System.out.println(isLoop());
+
+        
     }
 
 
