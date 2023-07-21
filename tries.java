@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class tries {
     public static void main(String[] args) {
         // printing
@@ -44,6 +46,28 @@ public class tries {
                 5	Elijah      
                 """;                                    // triple double inverted commas can store lines of strings
         System.out.println(st2);
-        
+
+        // constants 
+        final int z = 2;
+        // z = 13;                  will give error since final keywrd is used for z
+        System.out.println(z);
+
+        // Reading input
+        Scanner sc = new Scanner(System.in);        // uncomment to check the working one at a time.
+        // int x = sc.nextInt();
+        // System.out.println(x);
+
+        // String str = sc.next();
+        // String str = sc.nextLine();
+        // System.out.println(str);
+
+        // boolean bool = sc.nextBoolean();
+        // System.out.println(bool);
+
+        // For char
+        // char ch = sc.next().charAt(0);
+        // System.out.println(ch);
+        sc.close();
+
     }
 }

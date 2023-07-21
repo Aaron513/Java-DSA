@@ -234,22 +234,86 @@ public class singlyLinkList {
     //     return false;
     // }
 
-    // public static void createLoopInList(){
-    //     ListNode second = new ListNode(6);
-    //     ListNode t = new ListNode(3);
-    //     ListNode fo = new ListNode(15);
-    //     ListNode fi = new ListNode(56);
-    //     ListNode si = new ListNode(21);
-    //     ListNode se = new ListNode(9);
+    public static void createLoopInList(){
+        ListNode second = new ListNode(6);
+        ListNode t = new ListNode(3);
+        ListNode fo = new ListNode(15);
+        ListNode fi = new ListNode(56);
+        ListNode si = new ListNode(21);
+        ListNode se = new ListNode(9);
 
-    //     head = second;
-    //     second.next = t;
-    //     t.next = fo;
-    //     fo.next = fi;
-    //     fi.next = si;
-    //     si.next = se;
-    //     se.next = fo;
+        head = second;
+        second.next = t;
+        t.next = fo;
+        fo.next = fi;
+        fi.next = si;
+        si.next = se;
+        se.next = fo;
+    }
+
+    // public static ListNode startNodeInLoop(){
+    //     ListNode fastPtr = head;
+    //     ListNode slowPtr = head;
+    //     while(fastPtr != null && fastPtr.next != null){
+    //         fastPtr = fastPtr.next.next;
+    //         slowPtr = slowPtr.next;
+    //         if(fastPtr == slowPtr){
+    //             return getStartNode(slowPtr);
+    //         }
+    //     }
+    //     return null;
     // }
+
+    // public static ListNode getStartNode(ListNode slowPtr){
+    //     ListNode temp = head;
+    //     while(temp != slowPtr){
+    //         temp = temp.next;
+    //         slowPtr = slowPtr.next;
+    //     }
+    //     return temp;
+    // }
+
+    public static void remLoop(){
+        ListNode fastPtr = head;
+        ListNode slowPtr = head;
+        while(fastPtr != null && fastPtr.next != null){
+            fastPtr = fastPtr.next.next;
+            slowPtr = slowPtr.next;
+            if(fastPtr == slowPtr){
+                removeLoop(slowPtr);
+                return;
+            }
+        }
+    }
+
+    public static void removeLoop(ListNode slowPtr){
+        ListNode temp = head;
+        while(slowPtr.next != temp.next){
+            temp = temp.next;
+            slowPtr = slowPtr.next;
+        }
+        slowPtr.next = null;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -317,6 +381,15 @@ public class singlyLinkList {
         // createLoopInList();
         // System.out.println(isLoop());
 
+        // createLoopInList();
+        // System.out.println(startNodeInLoop().data);
+
+        createLoopInList();
+        remLoop();
+        display(head);
+
+
+        
         
     }
 
