@@ -137,9 +137,9 @@ public class doublyLinkedList {
         // displayForward();
         // displayBackward();
 
-        displayForward();
-        System.out.println(deleteLast().data);
-        displayForward();
+        // displayForward();
+        // System.out.println(deleteLast().data);
+        // displayForward();
         // displayBackward();
     }
 } 
